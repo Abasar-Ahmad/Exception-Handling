@@ -30,11 +30,12 @@ public class Main {
             System.out.println("C");
         }
         System.out.println("D");
+        //OUTPUT WILL BE :-  A , B , C, D
         */
 
 
 
-       /*
+        /*
         System.out.println("A");
         int arr[]={1,2,3,4};
         try {
@@ -52,11 +53,13 @@ public class Main {
             System.out.println("C");
         }
         System.out.println("D");
+       //OUTPUT:- A,E,C,D
         */
 
 
 
-       /* // agar ArrayIndexOutOfBoundsException error hai , or catch mai uska naam nhi hai tab bhi error dega
+        /*
+        // agar ArrayIndexOutOfBoundsException error hai , or catch mai uska naam nhi hai tab bhi error dega
         System.out.println("A");
         int arr[]={1,2,3,4};
         try {
@@ -70,13 +73,13 @@ public class Main {
             System.out.println("C");
         }
         System.out.println("D");
+        // OUTPUT :- A, C, error
+         */
 
-        */
 
 
        /*
         // agar exception ka naam na diya hai to aap sirf Exception likh sakte hai
-
         System.out.println("A");
         int arr[]={1,2,3,4};
         try {
@@ -95,15 +98,20 @@ public class Main {
             System.out.println("C");
         }
         System.out.println("D");
+        // OUTPUT :- A, k, c,D
         */
 
-        // yaha pe jab ham fun ko call krainge tab ArithmeticException kr ke ek error aayega
+
+        /*// yaha pe jab ham fun ko call krainge tab ArithmeticException kr ke ek error aayega
         // jisko solvo karne ke liye ham Exception handling ka use kainge
         System.out.println("A");
             fun();
         System.out.println("B");
+        // OUTPUT :- A, error
+         */
 
-        /*
+
+/*
         System.out.println("A");
         try {
             fun();
@@ -114,11 +122,34 @@ public class Main {
         }
         catch (ArithmeticException e)
         {
-            System.out.println("This is ArithmaticEception");
+            System.out.println("F");
         }
         System.out.println("B");
+    // OUTPUT :- A,F,B
+ */
 
-         */
+/*
+// THROW EXCEPTION
+        System.out.println("A");
+        try {
+            fo(12);
+        }
+        catch (Exception e)
+        {
+            System.out.println("Vote karne ke liye "+e);
+        }
+        System.out.println("B");
+ */
+
+        System.out.println("A");
+        try {
+            foo(12);
+        }
+        catch (Exception e)
+        {
+            System.out.println("Vote karne ke liye "+e);
+        }
+        System.out.println("B");
 
     }
 
@@ -127,6 +158,25 @@ public class Main {
     {
         int a=5/0;
 
+        return 10;
+    }
+
+    // function to check throw exception
+    public static int fo(int age)
+    {
+        if(age<18)
+        {
+            throw new RuntimeException("Age km hai tumhara");
+        }
+        return 10;
+    }
+
+    // function to check throw exception class
+    public static int foo(int age) throws UnderAgeException {
+        if(age<18)
+        {
+            throw new UnderAgeException("Age km hai tumhara");
+        }
         return 10;
     }
 }
